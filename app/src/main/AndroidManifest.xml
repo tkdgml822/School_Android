@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RockPaperScissors"
         tools:targetApi="31">
         <activity
+            android:name=".PlayerNameInput"
+            android:exported="false" />
+        <activity
             android:name=".Intro"
             android:exported="false" />
         <activity
