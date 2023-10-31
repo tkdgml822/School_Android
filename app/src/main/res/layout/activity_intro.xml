@@ -23,8 +23,9 @@
         android:src="@drawable/intro"  />
 
     <Button
+        android:id="@+id/gameStartButton"
         android:background="@color/white"
-        android:text="게임시작"
+        android:text="Game Start"
         android:textSize="30sp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
