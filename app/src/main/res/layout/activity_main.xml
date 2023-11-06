@@ -24,7 +24,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="가위" />
+                android:text="가위"
+                tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/rock"
@@ -62,14 +63,14 @@
                     android:layout_weight="1"
                     android:text="Player"
                     android:textColor="@color/black"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <EditText
                     android:id="@+id/playerText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <TextView
@@ -93,7 +94,7 @@
                     android:layout_weight="1"
                     android:text="Computer"
                     android:textColor="@color/black"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <EditText
                     android:id="@+id/computer"
@@ -101,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:contentDescription="computer"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -138,16 +139,18 @@
                     android:text="승률"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_weight="1"/>
                 <Button
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp" />
+                    android:layout_weight="1"/>
                 <Button
                     android:text="결과"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_weight="1"/>
             </LinearLayout>
 
             </LinearLayout>
