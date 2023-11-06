@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RockPaperScissors</string>
+    <string name = "rule">한 손으로 가위, 바위, 보의 세 모양을 만들어 차례나 승부를 정하는 방법 또는 놀이. 2인 이상의 사람이 동시에 \'가위, 바위, 보'를 외치고 동시에 각기 특정한 모양의 손을 내밀어 상성 관계에 따라 승부를 결정짓는 게임이다.</string>
 </resources>
