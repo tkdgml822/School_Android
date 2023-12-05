@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    Button scissorsButton, rockButton, paperButton;
+    Button scissorsButton, rockButton, paperButton, winRateButton;
     TextView playerText, computerText, resultWindow, playerName, totalCount, winsCount;
 
     int winCount = 1; // 이긴 횟수
@@ -29,11 +29,16 @@ public class MainActivity extends AppCompatActivity {
         playerText = findViewById(R.id.playerText);
         playerName = findViewById(R.id.player_name);
         computerText = findViewById(R.id.computer);
+
         scissorsButton = findViewById(R.id.scissor);
         rockButton = findViewById(R.id.rock);
         paperButton = findViewById(R.id.paper);
+
         totalCount = findViewById(R.id.total_game_count);
         winsCount = findViewById(R.id.win_count);
+
+        winRateButton = findViewById(R.id.win_rate);
+
 
         // Player 이름 바꾸기
         Intent playerIntent =  getIntent();
@@ -57,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
             playerText.setText("보");
             result(computer(3));
         });
+
+        winRateButton.setOnClickListener(view -> {
+
+        });
+
     }
 
     // 1 : 가위, 2 : 바위 : ,3 : 보
