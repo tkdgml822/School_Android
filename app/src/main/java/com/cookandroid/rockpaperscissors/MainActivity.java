@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button scissorsButton, rockButton, paperButton;
-    EditText playerText, computerText;
+    TextView playerText, computerText;
     TextView playerName, totalCount, winsCount;
 
     int winCount = 1; // 이긴 횟수

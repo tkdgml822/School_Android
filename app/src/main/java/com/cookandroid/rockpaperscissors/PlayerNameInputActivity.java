@@ -18,10 +18,10 @@ public class PlayerNameInputActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.nextButton);
         userName = findViewById(R.id.userName);
 
-        Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         nextButton.setOnClickListener(v -> {
-            mainIntent.putExtra("name", userName.getText().toString());
-            startActivity(mainIntent);
+            intent.putExtra("name", userName.getText().toString());
+            startActivity(intent);
         });
     }
 }
