@@ -2,7 +2,6 @@ package com.cookandroid.rockpaperscissors;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,9 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Objects;
 import java.util.Random;
@@ -20,14 +17,13 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     static float winRate;
     Button scissorsButton, rockButton, paperButton, winRateButton, resultButton;
-    TextView playerText, computerText, resultWindow, playerName, totalCount, winsCount;
-
+    TextView playerText, computerText, resultWindow, playerName, totalCount, winsCountText, loseCountText;
     Dialog winRateDialog;
 
-    int winCount = 1; // 승리 횟수
+    int winCount = 0; // 승리 횟수
+    int lossCount = 0; // 진 횟수
     int totalGameCount = 0; // 총 게임 횟수
     int drawCount = 0;
-    int lossCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         paperButton = findViewById(R.id.paper);
 
         totalCount = findViewById(R.id.total_game_count);
-        winsCount = findViewById(R.id.win_count);
+        winsCountText = findViewById(R.id.win_count);
+        loseCountText = findViewById(R.id.lose_count);
 
         winRateButton = findViewById(R.id.win_rate);
         resultButton = findViewById(R.id.result);
@@ -156,11 +153,12 @@ public class MainActivity extends AppCompatActivity {
         if (num == 0) {
             lossCount++;
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
+            loseCountText.setText("진 횟수 : " + lossCount);
             resultWindow.setText("졌습니다");
         }
         else if (num == 1) {
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
-            winsCount.setText("승리 횟수 : " + winCount);
+            winsCountText.setText("승리 횟수 : " + winCount);
             resultWindow.setText("이겼습니다");
         }
         else {
@@ -193,5 +191,4 @@ public class MainActivity extends AppCompatActivity {
             winRateDialog.dismiss(); // 닫기
         });
     }
-
 }
