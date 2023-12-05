@@ -24,9 +24,9 @@
 
     <Button
         android:id="@+id/gameStartButton"
-        android:background="@color/white"
         android:text="Game Start"
         android:textSize="30sp"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"

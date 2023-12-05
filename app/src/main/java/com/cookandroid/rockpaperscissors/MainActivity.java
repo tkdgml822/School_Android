@@ -14,8 +14,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button scissorsButton, rockButton, paperButton;
-    TextView playerText, computerText;
-    TextView playerName, totalCount, winsCount;
+    TextView playerText, computerText, resultWindow, playerName, totalCount, winsCount;
 
     int winCount = 1; // 이긴 횟수
     int totalGameCount = 0; // 총 게임 횟수
@@ -116,28 +115,23 @@ public class MainActivity extends AppCompatActivity {
         return  0;
     }
 
-    @SuppressLint("SetTextI18n")
     private void result(int num) {
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast;
+        resultWindow = findViewById(R.id.result_window);
 
         if (num == 0) {
             lossCount++;
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
-            toast = Toast.makeText(this, "졌습니다", duration);
-            toast.show();
+            resultWindow.setText("졌습니다");
         }
         else if (num == 1) {
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
             winsCount.setText("이긴 횟수 : " + winCount);
-            toast = Toast.makeText(this, "이겼습니다.", duration);
-            toast.show();
+            resultWindow.setText("이겼습니다");
         }
         else {
             drawCount++;
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
-            toast = Toast.makeText(this, "비겼습니다.", duration);
-            toast.show();
+            resultWindow.setText("비겼습니다");
         }
     }
 
