@@ -72,6 +72,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/default_image"
+                    android:layout_gravity="center" />
             </LinearLayout>
 
             <TextView
@@ -104,6 +111,13 @@
                     android:layout_weight="1"
                     android:contentDescription="computer"
                     android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/computerImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/default_image"
+                    android:layout_gravity="center" />
             </LinearLayout>
         </LinearLayout>
 
@@ -170,7 +184,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:layout_marginEnd="5sp"/>
+                    android:layout_marginEnd="5sp" />
 
                 <Button
                     android:id="@+id/result"

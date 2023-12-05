@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Objects;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView playerText, computerText, resultWindow, playerName, totalCount, winsCountText, loseCountText;
     Dialog winRateDialog;
 
+    ImageView imageView;
     int winCount = 0; // 승리 횟수
     int lossCount = 0; // 진 횟수
     int totalGameCount = 0; // 총 게임 횟수
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         winRateButton = findViewById(R.id.win_rate);
         resultButton = findViewById(R.id.result);
 
+        imageView = findViewById(R.id.imageView);
+
         winRateDialog = new Dialog(this);
         winRateDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         winRateDialog.setContentView(R.layout.win_rate);
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             totalGameCount++;
             playerText.setText("가위");
             result(computer(1));
+            imageView.setImageResource(R.drawable.scissors); // 가위 이미지 설정
         });
 
         // 바위 버튼을 눌렀을때
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             totalGameCount++;
             playerText.setText("바위");
             result(computer(2));
+            imageView.setImageResource(R.drawable.rock);
         });
 
         // 보 버튼을 눌렀을떄
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             totalGameCount++;
             playerText.setText("보");
             result(computer(3));
+            imageView.setImageResource(R.drawable.scissors);
         });
 
         // 승률 버튼을 눌렀을때
@@ -93,16 +100,21 @@ public class MainActivity extends AppCompatActivity {
 
     // 1 : 가위, 2 : 바위 : ,3 : 보
     private int computer(int human) {
+        ImageView computerImage = findViewById(R.id.computerImageView);
+
         Random rd = new Random();
         int randomNumber = (rd.nextInt(3) + 1);
         if (randomNumber == 1) {
             computerText.setText("가위");
+            computerImage.setImageResource(R.drawable.scissors);
         }
         else if (randomNumber == 2) {
             computerText.setText("바위");
+            computerImage.setImageResource(R.drawable.rock);
         }
         else {
             computerText.setText("보");
+            computerImage.setImageResource(R.drawable.paper);
         }
 
         switch (human) {
