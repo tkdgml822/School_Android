@@ -20,7 +20,8 @@
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:src="@drawable/intro"  />
+        android:src="@drawable/intro"
+        android:background="@drawable/round_bg"/>
 
     <Button
         android:id="@+id/gameStartButton"
