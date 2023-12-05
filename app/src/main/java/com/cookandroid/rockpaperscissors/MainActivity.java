@@ -3,18 +3,24 @@ package com.cookandroid.rockpaperscissors;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button scissorsButton, rockButton, paperButton, winRateButton;
     TextView playerText, computerText, resultWindow, playerName, totalCount, winsCount;
+
+    Dialog winRateDialog;
 
     int winCount = 1; // 이긴 횟수
     int totalGameCount = 0; // 총 게임 횟수
@@ -64,9 +70,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         winRateButton.setOnClickListener(view -> {
-
+            showWinrate();
         });
-
     }
 
     // 1 : 가위, 2 : 바위 : ,3 : 보
@@ -143,6 +148,18 @@ public class MainActivity extends AppCompatActivity {
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
             resultWindow.setText("비겼습니다");
         }
+    }
+
+    public void showWinrate() {
+        winRateDialog.show();
+        Objects.requireNonNull(winRateDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        // 닫기 버튼
+        Button noBtn = winRateDialog.findViewById(R.id.noButton);
+        noBtn.setOnClickListener(view -> {
+            winRateDialog.dismiss(); // 닫기
+        });
+
     }
 
 }
