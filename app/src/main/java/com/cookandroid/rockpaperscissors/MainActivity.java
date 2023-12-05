@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     Dialog winRateDialog;
 
-    int winCount = 1; // 이긴 횟수
+    int winCount = 1; // 승리 횟수
     int totalGameCount = 0; // 총 게임 횟수
     int drawCount = 0;
     int lossCount = 0;
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else if (num == 1) {
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
-            winsCount.setText("이긴 횟수 : " + winCount);
+            winsCount.setText("승리 횟수 : " + winCount);
             resultWindow.setText("이겼습니다");
         }
         else {

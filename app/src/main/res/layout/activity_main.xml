@@ -143,7 +143,7 @@
                     android:id="@+id/win_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="이긴 횟수 : "
+                    android:text="승리 횟수 : "
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 
