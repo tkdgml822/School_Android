@@ -18,14 +18,14 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     static float winRate;
     Button scissorsButton, rockButton, paperButton, winRateButton, resultButton;
-    TextView playerText, computerText, resultWindow, playerName, totalCount, winsCountText, loseCountText;
+    TextView playerText, computerText, resultWindow, playerName, totalCount, winsCountText, loseCountText, drawCountText;
     Dialog winRateDialog;
 
     ImageView imageView;
     int winCount = 0; // 승리 횟수
     int lossCount = 0; // 진 횟수
     int totalGameCount = 0; // 총 게임 횟수
-    int drawCount = 0;
+    int drawCount = 0; // 비긴 횟수
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         totalCount = findViewById(R.id.total_game_count);
         winsCountText = findViewById(R.id.win_count);
         loseCountText = findViewById(R.id.lose_count);
+        drawCountText = findViewById(R.id.draw_count);
 
         winRateButton = findViewById(R.id.win_rate);
         resultButton = findViewById(R.id.result);
@@ -121,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
             // 사용자가 가위를 냈을 때
             case 1:
                 if (randomNumber == 2) {
-                    winCount++;
                     return 0;
                 }
                 else if (randomNumber == 3) {
@@ -137,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
                     return 1;
                 }
                 else if (randomNumber == 3) {
-                    winCount++;
                     return 0;
                 }
                 else {
@@ -146,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             // 사용자가 보를 냈을 때
             case 3:
                 if (randomNumber == 1) {
-                    winCount++;
                     return 0;
                 }
                 else if (randomNumber == 2) {
@@ -169,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
             resultWindow.setText("졌습니다");
         }
         else if (num == 1) {
+            winCount++;
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
             winsCountText.setText("승리 횟수 : " + winCount);
             resultWindow.setText("이겼습니다");
@@ -176,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             drawCount++;
             totalCount.setText("총 게임 횟수 :" + totalGameCount);
+            drawCountText.setText("비긴 횟수 : " + drawCount);
             resultWindow.setText("비겼습니다");
         }
     }

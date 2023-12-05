@@ -46,7 +46,6 @@
 
         <!--  몸 통   -->
         <LinearLayout
-            android:layout_weight="0.02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -132,12 +131,10 @@
             <TextView
                 android:id="@+id/result_window"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="55dp"
                 android:text="결과창"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                tools:ignore="NestedWeights" />
+                android:textSize="40sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -153,52 +150,68 @@
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/win_count"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="승리 횟수: "
-                    android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/lose_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="진 횟수: "
-                    android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    <TextView
+                        android:id="@+id/win_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="승리 횟수: "
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/lose_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="진 횟수: "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/draw_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="비긴 횟수: "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/win_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="5sp"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:text="승률" />
 
-                <Button
-                    android:id="@+id/win_rate"
-                    android:text="승률"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="5sp" />
-
-                <Button
-                    android:id="@+id/result"
-                    android:text="결과"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="5dp"/>
-            </LinearLayout>
-
+            <Button
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:text="결과" />
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </LinearLayout>
