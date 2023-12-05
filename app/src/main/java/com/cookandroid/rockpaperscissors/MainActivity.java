@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    Button scissorsButton, rockButton, paperButton, winRateButton;
+    Button scissorsButton, rockButton, paperButton, winRateButton, resultButton;
     TextView playerText, computerText, resultWindow, playerName, totalCount, winsCount;
 
     Dialog winRateDialog;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         winsCount = findViewById(R.id.win_count);
 
         winRateButton = findViewById(R.id.win_rate);
+        resultButton = findViewById(R.id.result);
 
         winRateDialog = new Dialog(this);
         winRateDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -55,26 +56,36 @@ public class MainActivity extends AppCompatActivity {
         String name = playerIntent.getStringExtra("name");
         playerName.setText(name);
 
+        // 가위 버튼을 눌렀을때
         scissorsButton.setOnClickListener(view -> {
             totalGameCount++;
             playerText.setText("가위");
             result(computer(1));
         });
 
+        // 바위 버튼을 눌렀을때
         rockButton.setOnClickListener(view -> {
             totalGameCount++;
             playerText.setText("바위");
             result(computer(2));
         });
 
+        // 보 버튼을 눌렀을떄
         paperButton.setOnClickListener(view -> {
             totalGameCount++;
             playerText.setText("보");
             result(computer(3));
         });
 
+        // 승률 버튼을 눌렀을때
         winRateButton.setOnClickListener(view -> {
             showWinrate();
+        });
+
+        // 결과 버튼을 눌렀을때
+        resultButton.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), EndingActivity.class);
+            startActivity(intent);
         });
     }
 
