@@ -15,6 +15,7 @@
         android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/winRateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="현재 승률: "
@@ -22,6 +23,7 @@
         android:textSize="30sp"/>
 
     <TextView
+        android:id="@+id/lossCountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="진 횟수: "
@@ -29,23 +31,10 @@
         android:textSize="30sp"/>
 
     <TextView
+        android:id="@+id/winCountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="당신이 이긴 횟수: "
-        android:textColor="@color/black"
-        android:textSize="30sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="컴퓨터가 이긴 횟수: "
-        android:textColor="@color/black"
-        android:textSize="30sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="컴퓨터가 진 횟수: "
+        android:text="승리 횟수: "
         android:textColor="@color/black"
         android:textSize="30sp"/>
 

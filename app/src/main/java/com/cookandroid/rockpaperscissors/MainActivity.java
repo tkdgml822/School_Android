@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         winRateButton = findViewById(R.id.win_rate);
 
+        winRateDialog = new Dialog(this);
+        winRateDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        winRateDialog.setContentView(R.layout.win_rate);
 
         // Player 이름 바꾸기
         Intent playerIntent =  getIntent();
@@ -154,12 +158,24 @@ public class MainActivity extends AppCompatActivity {
         winRateDialog.show();
         Objects.requireNonNull(winRateDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+        // 승률 계산
+        int totalGames = winCount + lossCount;
+        float winRate = (float) winCount / totalGames * 100;
+
+        // TextView에 값 설정
+        TextView winRateText = winRateDialog.findViewById(R.id.winRateText);
+        TextView winCountText = winRateDialog.findViewById(R.id.winCountText);
+        TextView lossCountText = winRateDialog.findViewById(R.id.lossCountText);
+
+        winRateText.setText("현재 승률: " + winRate + "%");
+        winCountText.setText("당신이 이긴 횟수: " + winCount);
+        lossCountText.setText("컴퓨터가 이긴 횟수: " + lossCount);
+
         // 닫기 버튼
         Button noBtn = winRateDialog.findViewById(R.id.noButton);
         noBtn.setOnClickListener(view -> {
             winRateDialog.dismiss(); // 닫기
         });
-
     }
 
 }
