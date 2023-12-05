@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class PlayerNameInput extends AppCompatActivity {
+public class PlayerNameInputActivity extends AppCompatActivity {
     Button nextButton;
     TextView userName;
 

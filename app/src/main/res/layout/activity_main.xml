@@ -58,6 +58,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/player_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -65,7 +66,7 @@
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/playerText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,7 +97,7 @@
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/computer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -120,14 +121,31 @@
                 android:layout_weight="1"
                 android:text="결과창"
                 android:textColor="@color/black"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
-            <EditText
-                android:id="@+id/result"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:textSize="30dp" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_game_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:text="총 게임 횟수 : "
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/win_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="이긴 횟수 : "
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -135,17 +153,13 @@
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:gravity="center">
+
                 <Button
                     android:text="승률"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"/>
-                <Button
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+
                 <Button
                     android:text="결과"
                     android:layout_width="wrap_content"
@@ -153,7 +167,7 @@
                     android:layout_weight="1"/>
             </LinearLayout>
 
-            </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>
