@@ -18,6 +18,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    static float winRate;
     Button scissorsButton, rockButton, paperButton, winRateButton, resultButton;
     TextView playerText, computerText, resultWindow, playerName, totalCount, winsCount;
 
@@ -85,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
         // 결과 버튼을 눌렀을때
         resultButton.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), EndingActivity.class);
+            intent.putExtra("userName", playerName.getText().toString());
+            intent.putExtra("winRate", winRate);
+            intent.putExtra("winCount", winCount);
+            intent.putExtra("lossCount", lossCount);
             startActivity(intent);
         });
     }
@@ -171,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 승률 계산
         int totalGames = winCount + lossCount;
-        float winRate = (float) winCount / totalGames * 100;
+        winRate = (float) winCount / totalGames * 100;
 
         // TextView에 값 설정
         TextView winRateText = winRateDialog.findViewById(R.id.winRateText);
