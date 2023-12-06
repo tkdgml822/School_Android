@@ -192,10 +192,13 @@ public class MainActivity extends AppCompatActivity {
         TextView winRateText = winRateDialog.findViewById(R.id.winRateText);
         TextView winCountText = winRateDialog.findViewById(R.id.winCountText);
         TextView lossCountText = winRateDialog.findViewById(R.id.lossCountText);
+        TextView drawCountText = winRateDialog.findViewById(R.id.drawCountText);
 
         winRateText.setText("현재 승률: " + Math.round(winRate) + "%");
         winCountText.setText("승리 횟수: " + winCount);
+        drawCountText.setText("비긴 횟수: " + drawCount);
         lossCountText.setText("진 횟수: " + lossCount);
+
 
         // 닫기 버튼
         Button noBtn = winRateDialog.findViewById(R.id.noButton);
