@@ -72,7 +72,6 @@
                 android:layout_height="wrap_content"
                 android:text="종료"
                 android:layout_marginStart="5dp"/>
-
-
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
