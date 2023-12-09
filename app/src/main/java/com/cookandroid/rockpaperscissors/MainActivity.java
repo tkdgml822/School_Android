@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             totalGameCount++;
             playerText.setText("보");
             result(computer(3));
-            imageView.setImageResource(R.drawable.scissors);
+            imageView.setImageResource(R.drawable.paper);
         });
 
         // 승률 버튼을 눌렀을때
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             computerText.setText("바위");
             computerImage.setImageResource(R.drawable.rock);
         }
-        else {
+        else if (randomNumber == 3) {
             computerText.setText("보");
             computerImage.setImageResource(R.drawable.paper);
         }
