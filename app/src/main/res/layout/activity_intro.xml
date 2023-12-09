@@ -30,8 +30,7 @@
         android:layout_gravity="center"
         android:text="userName"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:layout_marginTop="40dp"/>
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/gameStartButton"
@@ -39,7 +38,6 @@
         android:textSize="30sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
