@@ -23,15 +23,34 @@
         android:src="@drawable/intro"
         android:background="@drawable/round_bg"/>
 
+    <TextView
+        android:id="@+id/intro_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="userName"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="40dp"/>
+
     <Button
         android:id="@+id/gameStartButton"
         android:text="Game Start"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="게임 룰 보기"
+        android:textSize="20sp" />
+
 
 
 </LinearLayout>
