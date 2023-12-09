@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
 
     MembershipOpenHelper openHelper;
-    EditText emailEt, pwdEt;
+    EditText userNameEt, pwdEt;
     SQLiteDatabase db;
     Button loginBtn, joinBtn;
     @Override
@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         openHelper = new MembershipOpenHelper(this);
         db = openHelper.getWritableDatabase();
-        emailEt = (EditText) findViewById(R.id.emailEt);
+        userNameEt = findViewById(R.id.userNameEt);
         pwdEt = (EditText) findViewById(R.id.pwdEt);
         loginBtn = (Button) findViewById(R.id.loginBtn);
         joinBtn = (Button) findViewById(R.id.joinBtn);
@@ -40,11 +40,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, JoinActivity.class));
                 finish();
             }
-            else if (v.getId() == R.id.loginBtn) {
-                String email = emailEt.getText().toString();
+            else if (v.getId() == R.id.joinBtn) {
+                String name = userNameEt.getText().toString();
                 String pwd = pwdEt.getText().toString();
 
-                String sql = "select * from membership where email = '"+email+"' and pwd = '"+pwd+"'";
+                String sql = "select * from membership where email = '"+name+"' and pwd = '"+pwd+"'";
                 Cursor cursor = db.rawQuery(sql, null);
                 while (cursor.moveToNext()) {
                     String no = cursor.getString(0);
@@ -53,9 +53,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if(cursor.getCount() == 1) {
                     // 해당 이메일과 아이디가 있으면 1개의 row를 가져오겠죠?
-                    Toast.makeText(LoginActivity.this, email+ "님 환영합니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, name+ "님 환영합니다", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
-                    intent.putExtra("email", email);
+                    intent.putExtra("email", name);
                     intent.putExtra("pwd", pwd);
                     startActivity(intent);
                     finish();

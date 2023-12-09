@@ -21,7 +21,7 @@ public class JoinActivity extends AppCompatActivity {
 
     MembershipOpenHelper openHelper;
     SQLiteDatabase db;
-    EditText emailEt, pwdEt;
+    EditText userNameEt, pwdEt;
     Button joinBtn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class JoinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
         openHelper = new MembershipOpenHelper(this);
         db = openHelper.getWritableDatabase();
-        emailEt = (EditText) findViewById(R.id.emailEt2);
+        userNameEt = findViewById(R.id.userNameEt2);
         pwdEt = (EditText) findViewById(R.id.pwdEt2);
         joinBtn = (Button) findViewById(R.id.joinBtn2);
         joinBtn.setOnClickListener(listener);
@@ -39,18 +39,18 @@ public class JoinActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.joinBtn2) {
-                String email = emailEt.getText().toString();
+                String name = userNameEt.getText().toString();
                 String pwd = pwdEt.getText().toString();
-                String sql = "select * from membership where email = '"+email+"'";
+                String sql = "select * from membership where email = '"+name+"'";
                 Cursor cursor = db.rawQuery(sql, null);
                 if(cursor.getCount() == 1) {
-                    // 해당 이메일과 아이디가 있으면 1개의 row를 가져오겠죠?
+                    // 해당 이메일과 아이디가 있으면 1개의 row를 가져옴
                     Toast.makeText(JoinActivity.this, "이미 존재하는 이메일입니다.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(JoinActivity.this, MainActivity.class));
                     finish();
                 } else {
-                    // 없다면 아무 값도 가져오지 않으므로 count 가 0 이겠죠?
-                    String sql2 ="insert into membership(email, pwd) values('"+email+"','"+pwd+"')";
+                    // 없다면 아무 값도 가져오지 않으므로 count 가 0
+                    String sql2 ="insert into membership(email, pwd) values('"+name+"','"+pwd+"')";
                     db.execSQL(sql2);
                     Toast.makeText(JoinActivity.this, "회원가입을 축하합니다.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(JoinActivity.this, LoginActivity.class));

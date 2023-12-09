@@ -16,13 +16,13 @@
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/emailEt2"
+        android:id="@+id/userNameEt2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint=" email"
-        android:drawableStart="@drawable/baseline_email_24"
+        android:hint=" name"
+        android:drawableStart="@drawable/baseline_person_24"
         android:background="@drawable/edit"
         android:padding="20dp"/>
 
