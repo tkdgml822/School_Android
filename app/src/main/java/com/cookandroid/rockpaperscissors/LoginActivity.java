@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(cursor.getCount() == 1) {
                     // 해당 이메일과 아이디가 있으면 1개의 row를 가져오겠죠?
                     Toast.makeText(LoginActivity.this, email+ "님 환영합니다", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
                     intent.putExtra("email", email);
                     intent.putExtra("pwd", pwd);
                     startActivity(intent);

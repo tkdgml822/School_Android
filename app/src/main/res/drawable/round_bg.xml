@@ -3,7 +3,7 @@
     <!--  배경색  -->
     <solid android:color="#ffffff" />
     <!-- 테두리 색 및 두께  -->
-    <stroke android:color="#eeeeee" android:width="2dp" />
+    <stroke android:color="#350E0E" android:width="2dp" />
     <!-- 모소리 둥글게 -->
     <corners android:radius="15dp" />
 </shape>
