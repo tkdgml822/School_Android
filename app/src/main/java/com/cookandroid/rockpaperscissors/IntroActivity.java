@@ -32,9 +32,9 @@ public class IntroActivity extends AppCompatActivity {
         // 게임 시작 버튼
         gameStartButton.setOnClickListener(view -> {
             Intent next = new Intent(getApplicationContext(), MainActivity.class);
+            next.putExtra("name", name);
             startActivity(next);
         });
-
 
         // 다이얼 초기화
         ruleDialog = new Dialog(this);
