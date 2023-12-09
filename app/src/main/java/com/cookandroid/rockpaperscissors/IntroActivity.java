@@ -15,13 +15,19 @@ import java.util.Objects;
 
 public class IntroActivity extends AppCompatActivity {
     Button gameStartButton, ruleButton;
-
+    TextView userName;
     Dialog ruleDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
         gameStartButton = findViewById(R.id.gameStartButton);
+
+        // 유저 이름 가져오기
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        userName = findViewById(R.id.intro_userName);
+        userName.setText(name);
 
         // 게임 시작 버튼
         gameStartButton.setOnClickListener(view -> {
@@ -34,6 +40,7 @@ public class IntroActivity extends AppCompatActivity {
         ruleDialog.setContentView(R.layout.rule);
 
         // 룰 설명 버튼
+        ruleButton = findViewById(R.id.rule);
         ruleButton.setOnClickListener(view -> {
             showRuleDialog();
         });
