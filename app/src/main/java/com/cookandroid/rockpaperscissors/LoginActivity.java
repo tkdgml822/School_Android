@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, JoinActivity.class));
                 finish();
             }
-            else if (v.getId() == R.id.joinBtn) {
+            else if (v.getId() == R.id.loginBtn) {
                 String email = emailEt.getText().toString();
                 String pwd = pwdEt.getText().toString();
 
@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    // 없다면 아무 값도 가져오지 않으므로 count 가 0 이겠죠?
+                    // 없다면 아무 값도 가져오지 않으므로 count 가 0
                     Toast.makeText(LoginActivity.this, "이메일 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show();
                 }
                 cursor.close();
