@@ -18,7 +18,7 @@ public class MembershipOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         try {
             String sql = "create table membership (" +
-                    "email varchar(40) not null primary key," +
+                    "name varchar(40) not null primary key," +
                     "pwd varchar(72) not null" +
                     ");";
             db.execSQL(sql);
