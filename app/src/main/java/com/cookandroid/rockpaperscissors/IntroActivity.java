@@ -31,10 +31,12 @@ public class IntroActivity extends AppCompatActivity {
 
         // 게임 시작 버튼
         gameStartButton.setOnClickListener(view -> {
-            Intent next = new Intent(getApplicationContext(), PlayerNameInputActivity.class);
+            Intent next = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(next);
         });
 
+
+        // 다이얼 초기화
         ruleDialog = new Dialog(this);
         ruleDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         ruleDialog.setContentView(R.layout.rule);
