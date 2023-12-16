@@ -30,9 +30,6 @@
             android:name=".EndingActivity"
             android:exported="true" />
         <activity
-            android:name=".PlayerNameInputActivity"
-            android:exported="true" />
-        <activity
             android:name=".IntroActivity"
             android:exported="true">
         </activity>
