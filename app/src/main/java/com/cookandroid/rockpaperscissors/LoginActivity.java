@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 String name = userNameEt.getText().toString();
                 String pwd = pwdEt.getText().toString();
 
-                String sql = "select * from membership where name = '"+name+"' and pwd = '"+pwd+"'";
+                String sql = "select * from membership2205052 where name = '"+name+"' and pwd = '"+pwd+"'";
 //                String sql = "DROP TABLE membership;";
                 Cursor cursor = db.rawQuery(sql, null);
                 while (cursor.moveToNext()) {

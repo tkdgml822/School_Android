@@ -41,7 +41,7 @@ public class JoinActivity extends AppCompatActivity {
             if (v.getId() == R.id.joinBtn2) {
                 String name = userNameEt.getText().toString();
                 String pwd = pwdEt.getText().toString();
-                String sql = "select * from membership where name = '"+name+"'";
+                String sql = "select * from membership2205052 where name = '"+name+"'";
                 Cursor cursor = db.rawQuery(sql, null);
                 if(cursor.getCount() == 1) {
                     // 해당 이메일과 아이디가 있으면 1개의 row를 가져옴
@@ -50,7 +50,7 @@ public class JoinActivity extends AppCompatActivity {
                     finish();
                 } else {
                     // 없다면 아무 값도 가져오지 않으므로 count 가 0
-                    String sql2 ="insert into membership(name, pwd) values('"+name+"','"+pwd+"')";
+                    String sql2 ="insert into membership2205052(name, pwd) values('"+name+"','"+pwd+"')";
                     db.execSQL(sql2);
                     Toast.makeText(JoinActivity.this, "회원가입을 축하합니다.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(JoinActivity.this, LoginActivity.class));

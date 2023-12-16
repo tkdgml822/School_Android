@@ -10,19 +10,19 @@ public class MembershipOpenHelper extends SQLiteOpenHelper {
     Context context;
 
     public MembershipOpenHelper(Context context) {
-        super(context, "member.db", null, 1);
+        super(context, "member2205052.db", null, 1);
         this.context = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            String sql = "create table membership (" +
+            String sql = "create table membership2205052 (" +
                     "name varchar(40) not null primary key," +
                     "pwd varchar(72) not null" +
                     ");";
             db.execSQL(sql);
-            Toast.makeText(context, "[membership] 테이블 생성", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "[membership2205052] 테이블 생성", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
         }
