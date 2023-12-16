@@ -12,7 +12,9 @@
 - 회원가입 (SQLite 사용)
 
 ## DB 확인법
-![[Pasted image 20231216110915.png]]
+![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9984D3355F46FC7A12)
 View -> Device File Explorer
-![[Pasted image 20231216110947.png]]
+![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99F607335F46FE0E11)
 DB 경로 : "/data/data/패키지명/databases/"
+
+Git : <a href="https://github.com/tkdgml822/School_Android">https://github.com/tkdgml822/School_Android</a>
